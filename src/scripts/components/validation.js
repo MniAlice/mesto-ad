@@ -30,12 +30,12 @@ const hasInvalidInput = (inputList) => {
   return inputList.some((input) => !input.validity.valid);
 };
 
-const disableSubmitButton = (buttonElement, settings) => {
+export const disableSubmitButton = (buttonElement, settings) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(settings.inactiveButtonClass);
 };
 
-const enableSubmitButton = (buttonElement, settings) => {
+export const enableSubmitButton = (buttonElement, settings) => {
   buttonElement.classList.remove(settings.inactiveButtonClass);
   buttonElement.disabled = false;
 };

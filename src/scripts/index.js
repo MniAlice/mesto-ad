@@ -9,7 +9,7 @@
 import { getCardList, getUserInfo, setUserInfo, setAvatar, addNewCard, removeCardFromServer } from "./components/api.js";
 import { createCardElement, deleteCard, likeCard } from "./components/card.js";
 import { openModalWindow, closeModalWindow, setCloseModalWindowEventListeners } from "./components/modal.js";
-import { enableValidation, clearValidation } from "./components/validation.js";
+import { enableValidation, clearValidation, disableSubmitButton, enableSubmitButton } from "./components/validation.js";
 
 // Объект настроек валидации
 const validationSettings = {
@@ -60,14 +60,15 @@ const logo = document.querySelector('.header__logo');
 let currentUserId = null;
 let currentCardToDelete = null; 
 
-// Утилита для изменения текста кнопки при загрузке (UX)
 const renderLoading = (isLoading, formElement, text = "Сохранение...", defaultText = "Сохранить") => {
   const submitButton = formElement.querySelector('.popup__button');
+  
   if (isLoading) {
     submitButton.textContent = text;
-    submitButton.disabled = true;
+    disableSubmitButton(submitButton, validationSettings);
   } else {
     submitButton.textContent = defaultText;
+    enableSubmitButton(submitButton, validationSettings);
   }
 };
 
