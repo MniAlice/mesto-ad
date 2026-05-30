@@ -8,4 +8,4 @@ npm run dev
 npm run build
 npm run deploy
 
-https://github.com/MniAlice/mesto-production
+https://mnialice.github.io/mesto-production/
