@@ -68,7 +68,6 @@ const renderLoading = (isLoading, formElement, text = "Сохранение...",
     submitButton.disabled = true;
   } else {
     submitButton.textContent = defaultText;
-    submitButton.disabled = false;
   }
 };
 
